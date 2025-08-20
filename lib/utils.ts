@@ -4,3 +4,8 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+
+// utility function that is converting the prisma object into a regular JS object 
+export function convertToPlainObject<T>(value: T): T {
+  return JSON.parse(JSON.stringify(value))
+}
